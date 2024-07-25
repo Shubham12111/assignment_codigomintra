@@ -1,0 +1,12 @@
+<!-- share_blog.html -->
+<h2>Share "{{ blog.title }}" by email</h2>
+{% if sent %}
+    <p>Email sent successfully!</p>
+{% else %}
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Send</button>
+    </form>
+{% endif %}
+
